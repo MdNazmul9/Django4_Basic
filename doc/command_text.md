@@ -59,7 +59,7 @@
                     - .:/django
                     # copy project_dir_to: Dockerfile Working Dir
                ports:
-                    - 8001:8001
+                    - 8000:8000
                image: app:django
                container_name: django_container1
                command: python manage.py runserver 0.0.0.0:8001
