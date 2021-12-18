@@ -1,5 +1,8 @@
 # Django4_Basic
 
+# Run Using Docker
+  Place .env File First 
+
 # Docker command text
 ```
 docker build --tag python-django .
