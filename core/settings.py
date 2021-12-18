@@ -1,11 +1,17 @@
 import os
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-6&s(koecg6xkxf6j1eag*7vjl^f1eq(udjf&kycom-yd!qxk+1'
-DEBUG = True
+from decouple import Csv, config
+from dj_database_url import parse as db_url
 
-ALLOWED_HOSTS = ['*']
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+
 LOCAL_APPS = [
     'home',
 ]
